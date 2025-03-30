@@ -49,14 +49,12 @@ def process_video(video_path):
     cap.release()
 
 def main():
+    os.environ["SDL_VIDEODRIVER"] = "dummy"  # Fix for OpenCV display issues
     st.title("Real-Time Object Detection & Motion Tracking")
     
-    option = st.radio("Choose an option", ("Live Camera", "Upload Video"))
+    option = st.radio("Choose an option", ("Upload Video"))
     
-    if option == "Live Camera":
-        st.write("Live camera detection is not yet implemented.")
-    
-    elif option == "Upload Video":
+    if option == "Upload Video":
         uploaded_file = st.file_uploader("Upload a video file", type=["mp4", "avi", "mov"])
         if uploaded_file:
             with tempfile.NamedTemporaryFile(delete=False) as temp_video:
