@@ -1,6 +1,8 @@
-streamlit
-opencv-python-headless
-numpy
-cvlib
-matplotlib
-pillow
+streamlit  
+opencv-python  
+numpy  
+cvlib  
+matplotlib  
+tempfile  
+setuptools  
+wheel  
